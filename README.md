@@ -53,11 +53,11 @@ flowchart LR
 
 ### Estrutura
 
-- [main.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/technical-request-document-assistant/main.py)
-- [app.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/technical-request-document-assistant/app.py)
-- [src/generate_documents.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/technical-request-document-assistant/src/generate_documents.py)
-- [src/extraction.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/technical-request-document-assistant/src/extraction.py)
-- [src/retrieval.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/technical-request-document-assistant/src/retrieval.py)
+- [main.py](./main.py)
+- [app.py](./app.py)
+- [src/generate_documents.py](./src/generate_documents.py)
+- [src/extraction.py](./src/extraction.py)
+- [src/retrieval.py](./src/retrieval.py)
 
 ### Como executar
 
@@ -68,6 +68,9 @@ pip install -r requirements.txt
 python3 main.py
 streamlit run app.py
 ```
+
+Observação:
+- se os artefatos ainda não existirem, o `Streamlit` gera automaticamente a base demo no primeiro acesso.
 
 ---
 
@@ -105,3 +108,7 @@ flowchart LR
     F --> G
     G --> H["Integrated Streamlit assistant"]
 ```
+
+### First run note
+
+- if the processed artifacts do not exist yet, the `Streamlit` app automatically generates the demo dataset on first load.

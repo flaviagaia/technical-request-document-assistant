@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import re
+
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -64,7 +66,13 @@ def answer_request_question(question: str, requests_df: pd.DataFrame, refs_df: p
             "evidence": ev,
         }
 
-    query_df = requests_df[requests_df["question"].str.contains("|".join(normalized.split()[:3]), case=False, na=False)].head(5)
+    escaped_terms = [re.escape(term) for term in normalized.split()[:3] if term]
+    pattern = "|".join(escaped_terms)
+    query_df = (
+        requests_df[requests_df["question"].str.contains(pattern, case=False, na=False, regex=True)].head(5)
+        if pattern
+        else requests_df.head(0)
+    )
     if query_df.empty:
         return {
             "answer": "Encontrei poucas evidências diretas. Revise os documentos relacionados abaixo.",
@@ -74,4 +82,3 @@ def answer_request_question(question: str, requests_df: pd.DataFrame, refs_df: p
         "answer": "Encontrei solicitações técnicas relacionadas ao tema consultado.",
         "evidence": query_df[["request_id", "subject", "discipline", "priority", "question"]],
     }
-

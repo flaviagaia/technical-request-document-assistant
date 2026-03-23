@@ -49,8 +49,11 @@ try:
     refs_df = pd.read_csv(REFERENCES_PATH)
     matches_df = pd.read_csv(MATCHES_PATH)
 except FileNotFoundError:
-    st.warning("Os artefatos ainda não foram gerados. Clique em 'Atualizar base de solicitações e referências'.")
-    st.stop()
+    run_pipeline()
+    requests_df = pd.read_csv(REQUESTS_PATH)
+    refs_df = pd.read_csv(REFERENCES_PATH)
+    matches_df = pd.read_csv(MATCHES_PATH)
+    st.info("A base demo foi gerada automaticamente para facilitar o primeiro uso.")
 
 m1, m2, m3 = st.columns(3)
 m1.metric("Solicitações", len(requests_df))
@@ -108,4 +111,3 @@ with tab_details:
     st.dataframe(refs_df, use_container_width=True, hide_index=True)
     st.markdown("**Correspondências request -> reference**")
     st.dataframe(matches_df, use_container_width=True, hide_index=True)
-
