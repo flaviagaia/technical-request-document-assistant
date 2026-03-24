@@ -67,7 +67,9 @@ REFERENCE_DOCUMENTS = {
 }
 
 
-def _write_pdf(path, lines: list[str]) -> None:
+def _write_pdf(path, lines: list[str], force: bool = False) -> None:
+    if path.exists() and not force:
+        return
     pdf = canvas.Canvas(str(path), pagesize=A4)
     width, height = A4
     y = height - 50
@@ -85,15 +87,14 @@ def _write_pdf(path, lines: list[str]) -> None:
     pdf.save()
 
 
-def generate_sample_pdfs() -> dict[str, int]:
+def generate_sample_pdfs(force: bool = False) -> dict[str, int]:
     REQUESTS_DIR.mkdir(parents=True, exist_ok=True)
     REFERENCE_DOCS_DIR.mkdir(parents=True, exist_ok=True)
 
     for filename, lines in REQUEST_DOCUMENTS.items():
-        _write_pdf(REQUESTS_DIR / filename, lines)
+        _write_pdf(REQUESTS_DIR / filename, lines, force=force)
 
     for filename, lines in REFERENCE_DOCUMENTS.items():
-        _write_pdf(REFERENCE_DOCS_DIR / filename, lines)
+        _write_pdf(REFERENCE_DOCS_DIR / filename, lines, force=force)
 
     return {"requests": len(REQUEST_DOCUMENTS), "reference_docs": len(REFERENCE_DOCUMENTS)}
-
