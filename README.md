@@ -13,6 +13,15 @@ Simular um ambiente em que usuários consigam:
 - localizar documentos de referência relacionados;
 - responder dúvidas operacionais a partir do conteúdo documental.
 
+### Para que serve
+
+Este projeto serve para apoiar usuários que lidam com solicitações técnicas e precisam entender rapidamente o contexto do pedido, os documentos relacionados e os principais pontos da dúvida. Ele ajuda a:
+
+- transformar PDFs de solicitações em dados estruturados;
+- encontrar documentos de referência mais relevantes para cada caso;
+- responder perguntas operacionais de forma mais rápida;
+- concentrar consulta e navegação documental em um único aplicativo.
+
 ### O que foi reproduzido
 
 Esta versão pública reproduz o padrão técnico de uma solução corporativa sem usar nomes, documentos ou dados sensíveis. Em vez disso, ela usa:
@@ -86,6 +95,15 @@ The application allows users to:
 - extract important fields from PDFs automatically;
 - retrieve related reference documents;
 - answer operational questions from document content.
+
+### What it is for
+
+This project is designed to help users who handle technical requests and need to quickly understand the request context, the related reference documents, and the key operational question behind it. It helps users:
+
+- transform request PDFs into structured data;
+- find the most relevant supporting documents for each request;
+- answer operational questions faster;
+- centralize document consultation in a single application.
 
 ### What was reproduced
 

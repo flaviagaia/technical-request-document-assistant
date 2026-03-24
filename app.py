@@ -15,16 +15,35 @@ st.markdown(
     <style>
     .stApp {
         background:
-            radial-gradient(circle at top left, rgba(14, 165, 233, 0.10), transparent 30%),
-            radial-gradient(circle at top right, rgba(59, 130, 246, 0.10), transparent 28%),
-            #f8fafc;
+            radial-gradient(circle at top left, rgba(14, 165, 233, 0.16), transparent 30%),
+            radial-gradient(circle at top right, rgba(59, 130, 246, 0.14), transparent 28%),
+            #06080d;
+        color: #e5eefb;
     }
     .hero-card {
-        background: white;
-        border: 1px solid rgba(15, 23, 42, 0.08);
+        background: rgba(10, 14, 23, 0.92);
+        border: 1px solid rgba(148, 163, 184, 0.18);
         border-radius: 20px;
         padding: 1.2rem 1.3rem;
-        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+        box-shadow: 0 18px 40px rgba(2, 6, 23, 0.45);
+    }
+    .hero-card h1, .hero-card p {
+        color: #f8fbff;
+    }
+    [data-testid="stMetricValue"], [data-testid="stMetricLabel"] {
+        color: #f8fbff;
+    }
+    [data-testid="stTabs"] button {
+        color: #d7e3f7;
+    }
+    [data-testid="stTabs"] button[aria-selected="true"] {
+        color: #7dd3fc;
+    }
+    [data-testid="stSidebar"], .stAlert, .stTextInput input, .stTextArea textarea, .stSelectbox div[data-baseweb="select"] > div {
+        color: #e5eefb;
+    }
+    .stDataFrame, [data-testid="stMarkdownContainer"], .stCaption {
+        color: #dbe7f5;
     }
     </style>
     """,
