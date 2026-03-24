@@ -44,6 +44,10 @@ flowchart LR
     G --> H["Integrated Streamlit assistant"]
 ```
 
+### Interface
+
+![Interface do projeto](assets/streamlit_dashboard.jpg)
+
 ### Técnicas usadas
 
 - geração de PDFs sintéticos com `reportlab`
@@ -126,6 +130,10 @@ flowchart LR
     F --> G
     G --> H["Integrated Streamlit assistant"]
 ```
+
+### Interface
+
+![Project interface](assets/streamlit_dashboard.jpg)
 
 ### First run note
 
